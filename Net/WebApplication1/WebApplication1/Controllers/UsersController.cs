@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
 
         [ResponseType(typeof(Users))]
         [HttpGet]
-        [ActionName("GetOneUser")]
+        [ActionName("GetUserById")]
         public Users GetUser(int id)
         {
             UsersBl usersBl = new UsersBl();
@@ -35,7 +35,7 @@ namespace WebApplication1.Controllers
         
         [HttpPost]
         [ActionName("InsertUser")]
-        public void InsertUser([FromBody]Users user)//, [FromBody]string name, [FromBody]string surname, [FromBody]string email, [FromBody]string clave)
+        public void InsertUser([FromBody]Users user)
         {
             UsersBl usersBl = new UsersBl();
             usersBl.AddUser(user);
@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
 
         [HttpPut]
         [ActionName("UpdateUser")]
-        public void UpdateUser([FromBody]Users user)//, [FromBody]string name, [FromBody]string surname, [FromBody]string email, [FromBody]string clave)
+        public void UpdateUser([FromBody]Users user)
         {
             UsersBl usersBl = new UsersBl();
             usersBl.UpdateUser(user);

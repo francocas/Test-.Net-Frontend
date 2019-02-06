@@ -10,18 +10,12 @@ namespace WebApplication1.Controllers
 {
     public class CotizacionController : ApiController
     {
-        // GET: api/Cotizacion
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/Cotizacion/5
+        [ActionName("DefaultApi")]
         public HttpResponseMessage Get(string Currency)
         {
             HttpResponseMessage retorno = new HttpResponseMessage();
             ICurrencyServiceStrat currencyService;
-            switch(Currency.ToLower())
+            switch (Currency.ToLower())
             {
                 case "dolar":
                     currencyService = new DolarStrat();
@@ -37,21 +31,6 @@ namespace WebApplication1.Controllers
                     break;
             }
             return retorno;
-        }
-
-        // POST: api/Cotizacion
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Cotizacion/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Cotizacion/5
-        public void Delete(int id)
-        {
         }
     }
 }
