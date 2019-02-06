@@ -1,0 +1,24 @@
+Ejecutar los scripts de BD:
+
+1: Create Tabla Users
+
+2: Datos de prueba
+
+-----------------------------------
+
+Endpoints:
+
+    Cotizacion:
+        /MyRestFullApp/Cotizacion/Dolar
+    Users:
+        GetAll: /MyRestFullApp/Users
+        GetById: /MyRestFullApp/Users/GetUserById/{id}
+        Update: /MyRestFullApp/Users/UpdateUser 
+        (Necesario enviar el id en el body junto a los campos a editar <id, name, surname, email, password)
+        Insert: /MyRestFullApp/Users/InsertUser 
+        (Recibe campos en el body <name, surname, email, password)
+        DeleteById:  /MyRestFullApp/Users/DeleteUserById/{id}
+
+-----------------------------------
+
+--Cambiar el connection string en el Web.Config
