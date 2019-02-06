@@ -1,0 +1,5 @@
+C:\Users\Franco\source\repos\WebApplication1\Modelos\bin\Debug\Modelos.dll
+C:\Users\Franco\source\repos\WebApplication1\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Franco\source\repos\WebApplication1\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Franco\source\repos\WebApplication1\Modelos\obj\Debug\Modelos.dll
+C:\Users\Franco\source\repos\WebApplication1\Modelos\obj\Debug\Modelos.pdb
