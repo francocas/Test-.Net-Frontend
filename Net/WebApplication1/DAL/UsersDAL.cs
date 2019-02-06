@@ -39,17 +39,18 @@ namespace DAL
         }
 
 
-        public static Users Delete(int id)
+        public static bool Delete(int id)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-            Users retorno = new Users();
             SqlCommand command = new SqlCommand("USE Users DELETE FROM dbo.Users WHERE id =" + id + ";", con);
             con.Open();
-            command.ExecuteNonQuery();
-            return retorno;
+            if (command.ExecuteNonQuery() > 0)
+                return true;
+            else
+                return false;
         }
 
-        public static Users Insert(Users userToInsert)
+        public static bool Insert(Users userToInsert)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
             SqlCommand command = new SqlCommand("USE Users INSERT INTO dbo.Users(name, surname, email, password) values('"
@@ -59,28 +60,35 @@ namespace DAL
                 +"','"+userToInsert.password
                 +"');", con);
             con.Open();
-            command.ExecuteNonQuery();
-
-            return userToInsert;
+            if (command.ExecuteNonQuery() > 0)
+                return true;
+            else
+                return false;
         }
 
-        public static void Update(string column, string data, int id)
+        public static bool Update(string column, string data, int id)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
             SqlCommand command = new SqlCommand("USE Users UPDATE dbo.Users SET " +column+" = '" + data+"' WHERE id = "+id.ToString()+";", con);
             con.Open();
-            command.ExecuteNonQuery();
+            if (command.ExecuteNonQuery() > 0)
+                return true;
+            else
+                return false;
         }
 
-        public static void Update(Users userUpdate)
+        public static bool Update(Users userUpdate)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-            SqlCommand command = new SqlCommand("USE Users UPDATE dbo.Users SET name = " + userUpdate.name+
-                ", surname = "+ userUpdate.surname
-                + ", email = " + userUpdate.email
-                + ", password = " + userUpdate.password + "WHERE id = "+userUpdate.id+" ;", con);
+            SqlCommand command = new SqlCommand("USE Users UPDATE dbo.Users SET name = '" + userUpdate.name+
+                "', surname = '"+ userUpdate.surname
+                + "', email = '" + userUpdate.email
+                + "', password = '" + userUpdate.password + "' WHERE id = "+userUpdate.id+" ;", con);
             con.Open();
-            command.ExecuteNonQuery();
+            if (command.ExecuteNonQuery() > 0)
+                return true;
+            else
+                return false;
         }
     }
 }

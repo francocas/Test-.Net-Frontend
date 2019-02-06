@@ -35,26 +35,53 @@ namespace WebApplication1.Controllers
         
         [HttpPost]
         [ActionName("InsertUser")]
-        public void InsertUser([FromBody]Users user)
+        public HttpResponseMessage InsertUser([FromBody]Users user)
         {
             UsersBl usersBl = new UsersBl();
-            usersBl.AddUser(user);
+            if (!usersBl.AddUser(user))
+            {
+                var message = string.Format("Product with id = {0} not found", user.id);
+                HttpError err = new HttpError(message);
+                return Request.CreateResponse(HttpStatusCode.NotFound, err);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
         }
 
         [HttpPut]
         [ActionName("UpdateUser")]
-        public void UpdateUser([FromBody]Users user)
+        public HttpResponseMessage UpdateUser([FromBody]Users user)
         {
             UsersBl usersBl = new UsersBl();
-            usersBl.UpdateUser(user);
+            if(!usersBl.UpdateUser(user))
+            {
+                var message = string.Format("Product with id = {0} not found", user.id);
+                HttpError err = new HttpError(message);
+                return Request.CreateResponse(HttpStatusCode.NotFound, err);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
         }
 
 
         [ActionName("DeleteUserById")]
-        public void Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
             UsersBl usersBl = new UsersBl();
-            usersBl.DeleteUserById(id);
+            if(!usersBl.DeleteUserById(id))
+            {
+                var message = string.Format("Product with id = {0} not found", id);
+                HttpError err = new HttpError(message);
+                return Request.CreateResponse(HttpStatusCode.NotFound, err);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
         }
     }
 }

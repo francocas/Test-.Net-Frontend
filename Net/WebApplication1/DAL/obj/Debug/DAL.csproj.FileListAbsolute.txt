@@ -7,3 +7,12 @@ C:\Users\Franco\source\repos\WebApplication1\DAL\obj\Debug\DAL.csproj.CoreCompil
 C:\Users\Franco\source\repos\WebApplication1\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Franco\source\repos\WebApplication1\DAL\obj\Debug\DAL.dll
 C:\Users\Franco\source\repos\WebApplication1\DAL\obj\Debug\DAL.pdb
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\bin\Debug\DAL.dll
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\bin\Debug\DAL.pdb
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\bin\Debug\Modelos.dll
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\bin\Debug\Modelos.pdb
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\obj\Debug\DAL.dll
+C:\Users\Franco\Desktop\.Net\Test-.Net-Frontend\Net\WebApplication1\DAL\obj\Debug\DAL.pdb

@@ -23,17 +23,17 @@ namespace BL
             return UsersDAL.Get(id);
         }
 
-        public void DeleteUserById(int id)
+        public bool DeleteUserById(int id)
         {
-            UsersDAL.Delete(id);
+            return UsersDAL.Delete(id);
         }
 
-        public void AddUser(Users user)
+        public bool AddUser(Users user)
         {
-            UsersDAL.Insert(user);
+            return UsersDAL.Insert(user);
         }
 
-        public void UpdateUser(Users user)
+        public bool UpdateUser(Users user)
         {
             if (user.id != 0)
             {
@@ -42,25 +42,26 @@ namespace BL
                    && !string.IsNullOrEmpty(user.email)
                    && !string.IsNullOrEmpty(user.password))
                 {
-                    UsersDAL.Update(user);
+                    return UsersDAL.Update(user);
                 }
                 if (!string.IsNullOrEmpty(user.name))
                 {
-                    UsersDAL.Update("name", user.name, user.id);
+                    return UsersDAL.Update("name", user.name, user.id);
                 }
                 if (!string.IsNullOrEmpty(user.surname))
                 {
-                    UsersDAL.Update("surname", user.surname, user.id);
+                    return UsersDAL.Update("surname", user.surname, user.id);
                 }
                 if (!string.IsNullOrEmpty(user.email))
                 {
-                    UsersDAL.Update("email", user.email, user.id);
+                    return UsersDAL.Update("email", user.email, user.id);
                 }
                 if (!string.IsNullOrEmpty(user.password))
                 {
-                    UsersDAL.Update("password", user.password, user.id);
+                    return UsersDAL.Update("password", user.password, user.id);
                 }
             }
+            return false;
             
         }
     }
